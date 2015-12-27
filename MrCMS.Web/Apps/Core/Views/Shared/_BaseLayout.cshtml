@@ -27,57 +27,61 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-mrcms" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <img src="/Apps/Core/Content/Images/mrcms-hat.gif" style="height: auto; width: 40px;" alt="Mr CMS Logo" />
-                    Mr CMS
-                </a>
-            </div>
-            <div class="collapse navbar-collapse navbar-left" id="bs-example-navbar-collapse-1">
-                @{ RenderZone("Main Navigation", allowFrontEndEditing: false); }
-            </div>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav" id="nav-links-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </a>
-                        <div class="dropdown-menu">
-                            @{ Html.RenderPartial("SearchForm"); }
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </a>
-                        @{ RenderZone("Header Right", allowFrontEndEditing: false); }
-                    </li>
-                </ul>
-            </div>
+    <div id="template-page-wrapper">
+        <header id="tpl-header">
+            <nav class="navbar navbar-inverse navbar-XXmrcms" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @*<a class="navbar-brand" href="/">
+                            <img src="/Apps/Core/Content/Images/mrcms-hat.gif" style="height: auto; width: 40px;" alt="Mr CMS Logo" />
+                            Mr CMS
+                        </a>*@
+                        @{ RenderZone("Header Left"); }
+                    </div>
+                    <div class="collapse navbar-collapse navbar-left" id="navbar-collapse-main">
+                        @{ RenderZone("Main Navigation", allowFrontEndEditing: false); }
+                    </div>
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav" id="nav-links-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    @{ Html.RenderPartial("SearchForm"); }
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                @{ RenderZone("Header Right", allowFrontEndEditing: false); }
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="tpl-content" class="container mrcms-content">
+            @{ RenderZone("Before Content"); }
+
+            @RenderBody()
+            @{ RenderZone("Comments"); }
+            @{ RenderZone("After Content"); }
         </div>
-    </nav>
-    <div class="container mrcms-content">
-        @{ RenderZone("Before Content"); }
 
-        @RenderBody()
-        @{ RenderZone("Comments"); }
-        @{ RenderZone("After Content"); }
-    </div>
 
-    <hr />
-    <div class="container">
-        <footer>
+        <footer id="tpl-footer">
             @{ RenderZone("Footer"); }
         </footer>
     </div>
+
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     @{

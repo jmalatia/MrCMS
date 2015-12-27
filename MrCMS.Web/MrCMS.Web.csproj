@@ -30,6 +30,7 @@
     <TargetFrameworkProfile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <NuGetPackageImportStamp>eff8cd49</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -2143,7 +2144,6 @@
     <Content Include="Areas\Admin\Views\WebpageSearch\Results.cshtml" />
     <Content Include="Areas\Admin\Views\WebpageSearch\Search.cshtml" />
     <Content Include="LICENSE" />
-    <None Include="Properties\PublishProfiles\new.pubxml" />
     <Content Include="Themes\Default\Apps\Core\Web.config">
       <SubType>Designer</SubType>
     </Content>
