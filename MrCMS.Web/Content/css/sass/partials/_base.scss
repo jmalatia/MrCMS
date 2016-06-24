@@ -1,0 +1,22 @@
+﻿@import "../modules/_all.scss";
+
+$body-background-color: #000;
+$font-color: #aaa;
+
+$mobile: screen max-width 320px;
+$small: screen max-width 480px;
+$tablet: screen max-width 768px;
+$narrow: screen max-width 992px;
+$wide: screen max-width 1200px;
+
+$susy: (
+    container: auto,
+    columns: 12,
+    gutters: .25,
+    global-box-sizing: border-box
+);
+    //container: 1170px,
+    //columns: 12,
+    //gutters: .25,
+    //float: left,
+    //box-sizing: border-box

@@ -1,0 +1,40 @@
+﻿@import "_base.scss";
+
+
+.page-facility {
+    .wrapper {
+        padding: 1.5em 1em 1em 1em;
+
+        @media only screen and (max-width: 992px) {
+            min-height: 40em;
+        }
+    }
+
+    .wrapper h3 {
+        padding-top: .5em;
+        min-height: 2.7em;
+    }
+
+    .wrapper p {
+        padding-top: 1em;
+        min-height: 10em;
+    }
+
+}
+
+
+#services .service {
+    min-height: 248px;
+    padding: .6em 2em;
+}
+
+
+
+.page-contact #map {
+    @media screen and (max-width: 767px) {
+        // limit width of google maps so you can scroll thru page and not get stuck in the map
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+

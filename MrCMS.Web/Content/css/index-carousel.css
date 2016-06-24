@@ -1,0 +1,401 @@
+﻿/*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
+
+/* #bc101a = rgba(188,16,26,1)*/
+
+/*html, body {
+    height: 100%;
+}*/
+
+/* for ScrollReveal left/right transistions to keep viewport width */
+/*section {
+    overflow-x: hidden;
+}*/
+
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+/*.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+
+    .fade-carousel .carousel-inner .item {
+        height: 100vh;
+    }
+
+    .fade-carousel .carousel-indicators > li {
+        margin: 0 2px;
+        background-color: #bc101a; 
+        border-color: #bc101a; 
+        opacity: .7;
+    }
+
+        .fade-carousel .carousel-indicators > li.active {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+        }*/
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+/*.hero {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+
+    .hero h2 {
+        font-size: 6em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero h3 {
+        font-size: 2.5em;
+    }
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.hero {
+    font-family: Oswald, Roboto, Arial, sans-serif;
+}*/
+
+
+
+/*.fixed-text {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 50%;
+    margin-left: -25%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    background-color: #bc101a;
+    padding: 2em;
+}*/
+
+
+/********************************/
+/*            Overlay           */
+/********************************/
+/*.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}*/
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+/*.btn.btn-lg {
+    padding: 10px 40px;
+}
+
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}*/
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+/*.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.fade-carousel .slides .slide-1 {
+    background-image: url('/Content/upload/1/template/hero-baseball-stadium.jpg');
+}
+
+.fade-carousel .slides .slide-2 {
+    background-image: url('/Content/upload/1/template/hero-baseball-on-line.jpg');
+}
+
+.fade-carousel .slides .slide-3 {
+    background-image: url('/Content/upload/1/template/hero-player-sliding.jpg');
+}*/
+
+
+
+/* jjm */
+/*.bkgrd-theme {
+    background-color: #bc101a;
+    color: white;
+}
+
+.bkgrd-section {
+    padding: 1em;
+}*/
+
+
+
+/*body {
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: #aaa; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, Arial, sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.spacer {
+    height: 12em;
+}
+
+.footer-template {
+    margin: 2em 1em;
+}
+
+.bkgrd-section h2 {
+    font-size: 300%;
+    color: rgb(132,0,0);
+}*/
+
+
+
+/*.sect4 h4 {
+    font-weight: normal;
+    color: rgb(101, 101, 101);
+}
+
+.sec3-x, .sec4-x {
+    padding: 1em 2em;
+    min-height: 248px;
+}
+
+.sec3-1, .sec4-1, .sec4-3 {
+    background-color: rgb(51,51,51);
+}
+
+.sec3-2, .sec4-2, .sec4-4 {
+    background-color: rgb(36,36,36);
+}
+
+.sec3-3 {
+    background-color: rgb(51,51,51);
+}*/
+
+/*section .col-md-12 h2 {
+    text-align: center;
+}
+
+section .col-md-12 p {
+    text-align: center;
+    margin-bottom: 3em;
+    color: #727272;
+}*/
+
+
+/*.item.slides p {
+    margin: 1em 0 0 0;
+    padding: 0;
+}*/
+
+
+
+/*.home-page-table {
+    text-align: left;
+    margin: 0 auto;
+}
+
+    .home-page-table td {
+        padding: .3em 1em;
+    }*/
+
+
+
+
+/* 1, 4, 7, etc. */
+/*.home-sections section:nth-child(3n+1) {
+    background-color: #151515; 
+}*/
+
+/* 2, 5, 8 etc. */
+/*.home-sections section:nth-child(3n+2) {
+    background-color: #242424; 
+}*/
+
+/* 3, 6, 9 */
+/*.home-sections section:nth-child(3n+0) {
+    background-color: #000;
+}
+
+
+.bg1,
+.home-sections section.bg1  {
+    background-color: #151515;
+}
+
+.bg2,
+.home-sections section.bg2  {
+    background-color: #242424;
+}
+
+.bg3,
+.home-sections section.bg3  {
+    background-color: #000;
+}*/
+
+/*.home-sections .text-section p,
+.home-sections .text-section td {
+    font-size: 16px;
+}*/
+
+/*.home-sections section {
+    padding: 3em 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .home-sections section {
+        padding: 1em 0;
+    }
+}
+
+.home-sections section .wrapper {
+    padding: 1em;
+}
+
+.testimonials {
+    margin: 1em 0;
+}
+
+
+    .testimonials blockquote img {
+        border-radius: 50%;
+        float: right;
+        max-height: 100px;
+    }*/
+
+
+
+
+
+
+
+
+/*img.down-arrow-circle {
+    width: 40px;
+}
+
+a .down-arrow-circle {
+    border: 1px solid white;
+    border-radius: 100%;
+    padding: .5em;
+    margin: .5em 0;
+}
+
+    a .down-arrow-circle:hover,
+    a .down-arrow-circle:focus {
+        border-color: #737272;
+        background-color: rgba(99, 99, 99, 0.76);
+    }*/
+
+
+
+
+
+
+
+
+
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+
+/*@media screen and (max-width: 640px), screen and (max-height: 805px) {
+    .hero h2 {
+        font-size: 3.5em;
+    }
+
+    .hero h3 {
+        font-size: 1.5em;
+    }
+
+    .fixed-text {
+        padding: .5em;
+        width: 40%;
+        margin-left: -20%;
+    }
+
+    .bkgrd-section h2 {
+        font-size: 350%;
+    }
+}
+
+
+@media screen and (max-width:1280px) {
+    .bkgrd-section p {
+        font-size: inherit;
+    }
+
+    .bkgrd-section h2 {
+        font-size: 300%;
+    }
+}
+
+
+@media screen and (max-height: 480px) {
+    .hero h2 {
+        font-size: 3em;
+    }
+
+    .fixed-text {
+        padding: .5em;
+        top: 0;
+        width: 30%;
+        margin-left: -15%;
+    }
+}*/
+

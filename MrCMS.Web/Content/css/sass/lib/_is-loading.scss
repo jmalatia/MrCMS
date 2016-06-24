@@ -1,0 +1,152 @@
+﻿// Moved to _fade-in
+//body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+//    animation: none !important;
+//    transition: none !important;
+//}
+
+/*body.is-loading {
+    opacity:0;
+}
+
+body {opacity:1;}*/
+
+
+
+
+/* Loader */
+
+	@keyframes spinner-show {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+
+	@keyframes spinner-hide {
+		0% {
+			color: rgba(255, 255, 255, 0.15);
+			z-index: 100001;
+			transform: scale(1) rotate(0deg);
+		}
+
+		99% {
+			color: #1c1d26;
+			z-index: 100001;
+			transform: scale(0.5) rotate(360deg);
+		}
+
+		100% {
+			color: #1c1d26;
+			z-index: -1;
+			transform: scale(0.5) rotate(360deg);
+		}
+	}
+
+
+	@keyframes spinner-rotate {
+		0% {
+			transform: scale(1) rotate(0deg);
+		}
+
+		100% {
+			transform: scale(1) rotate(360deg);
+		}
+	}
+
+    
+    
+    @keyframes overlay-hide {
+		0% {
+			opacity: 1;
+			z-index: 100000;
+		}
+
+		15% {
+			opacity: 1;
+			z-index: 100000;
+		}
+
+		99% {
+			opacity: 0;
+			z-index: 100000;
+		}
+
+		100% {
+			opacity: 0;
+			z-index: -1;
+		}
+	}
+
+
+    body.landing {
+		text-decoration: none;
+	}
+
+
+    body.landing:before {
+			//-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		body.landing:before {
+			animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
+			transform-origin: 50% 50%;
+			color: rgba(255, 255, 255, 0.15);
+			content: '\f1ce';
+			cursor: default;
+			display: block;
+			font-size: 2em;
+			height: 2em;
+			left: 50%;
+			line-height: 2em;
+			margin: -1em 0 0 -1em;
+			opacity: 0;
+			position: fixed;
+			text-align: center;
+			top: 50%;
+			width: 2em;
+			z-index: -1;
+		}
+
+		body.landing:after {
+			//animation: overlay-hide 1.5s ease-in forwards !important;
+            animation: overlay-hide 1s ease-in forwards !important;
+			//background: #1c1d26;  
+            background: #000;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		body.landing.is-loading:before {
+			animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+			z-index: 100001;
+		}
+
+		body.landing.is-loading:after {
+			animation: none !important;
+			opacity: 1;
+			z-index: 100000;
+		}
+
+	@media (-webkit-min-device-pixel-ratio: 2) {
+
+		body.landing:before {
+			line-height: 2.025em;
+		}
+
+	}

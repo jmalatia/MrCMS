@@ -1,0 +1,47 @@
+﻿@import "_base.scss";
+
+body {
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+    background-color: black;
+    color: #aaa; /*rgb(170,170,170);*/
+    background: #000; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, Arial, sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+h1, h2,
+.h1, .h2 {
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+
+a, button {
+    transition: all .2s ease-in-out;
+}
+
+
+ .alt-font-color {
+     color:#888;
+ }    
+ 
+ .highlight {
+     color: #b10000;
+ }
+
+ a.no-format,
+.no-format a {
+    color: inherit;
+    border-bottom: 1px dotted gray;
+}
+
+a:hover.no-format,
+.no-format a:hover  {
+    border-bottom: 0;
+    text-decoration: none;
+    color: white;
+}

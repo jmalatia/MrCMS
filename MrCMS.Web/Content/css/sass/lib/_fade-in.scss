@@ -1,0 +1,67 @@
+﻿
+  
+
+body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+    animation: none !important;
+    transition: none !important;
+    //display: none;
+    //JJM
+    //visibility: hidden;
+}
+
+
+/*.fouc {
+    //visibility: visible;
+    opacity: 1;
+    transition: opacity ease-in 3s;
+}*/
+
+#tpl-page-wrapper .fouc {
+    //added #tpl-page-wrapper so it would be visible in ckeditor but hidden on html page
+    //visibility: hidden;
+    opacity: 0;
+    transition: opacity ease-in .3s;
+}
+
+
+#tpl-page-wrapper .fouc.fouc-done {
+    //visibility: visible;
+    opacity: 1;
+}     
+  
+
+
+#tpl-page-wrapper [class*='scrollReveal'] { 
+    visibility: hidden;
+} 
+
+
+/* for ScrollReveal left/right transistions to keep viewport width on mobile devices */
+#tpl-content {
+    overflow-x: hidden;
+    overflow-y: hidden; //had to add this as well becuase without it, it caused a vertical scrollbar
+}
+
+
+.fade-in {
+    animation: fadein .7s;
+    //animation: fadein 5s;
+}
+
+.fade-in-fast {
+    animation: fadein .3s;
+}
+
+.fade-in-slow {
+    animation: fadein 5s;
+}
+
+
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
