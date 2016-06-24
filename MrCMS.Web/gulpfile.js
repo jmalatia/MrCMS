@@ -25,7 +25,7 @@ paths.sassDest = paths.webroot + "css";
 //paths.autoprefixer = paths.webroot + "css/dist/style-sass.css";
 //paths.autoprefixerDest = paths.webroot + "css/dist/dist";
 
-//sass 
+//sass  
 gulp.task('sass-autoprefixer:compile', function () {
     gulp.src(paths.sass)
         .pipe(sass().on('error', sass.logError))

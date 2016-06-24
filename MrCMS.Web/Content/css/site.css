@@ -16,7 +16,6 @@ h1, h2,
   text-transform: uppercase; }
 
 a, button {
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out; }
 
 .alt-font-color {
@@ -331,11 +330,9 @@ ul.contact.social li {
     height: 100vh; }
     .carousel-overlay .carousel-inner .item .hero {
       opacity: 0;
-      -webkit-transition: 2s all ease-in-out .1s;
       transition: 2s all ease-in-out .1s; }
     .carousel-overlay .carousel-inner .item.active .hero {
       opacity: 1;
-      -webkit-transition: 2s all ease-in-out .1s;
       transition: 2s all ease-in-out .1s; }
   .carousel-overlay .carousel-indicators > li {
     margin: 0 2px;
@@ -468,7 +465,6 @@ a .down-arrow-circle:focus {
 #article-tiled-list .article-item:hover {
   background-color: #333;
   box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 15px;
-  -webkit-transition: all ease-in-out .2s;
   transition: all ease-in-out .2s; }
 
 @media (max-width: 992px) {
@@ -677,7 +673,6 @@ table.cages-price-table td {
 .btn-outline {
   background-color: transparent;
   color: inherit;
-  -webkit-transition: all .5s;
   transition: all .5s;
   border-radius: 0; }
 
@@ -716,7 +711,6 @@ body.mrcms-admin-bar-on {
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
   -webkit-animation: none !important;
           animation: none !important;
-  -webkit-transition: none !important;
   transition: none !important; }
 
 /*.fouc {
@@ -726,7 +720,6 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 }*/
 #tpl-page-wrapper .fouc {
   opacity: 0;
-  -webkit-transition: opacity ease-in .3s;
   transition: opacity ease-in .3s; }
 
 #tpl-page-wrapper .fouc.fouc-done {
