@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /login/
+
+# Remove number-sign to un-comment
+# Sitemap: http://www.mysite.com/sitemap.xml
