@@ -342,6 +342,18 @@
     <Compile Include="Apps\Core\SitemapGeneration\GenerateSitemapForTextPage.cs" />
     <Compile Include="Apps\Core\SitemapGeneration\HideResetPasswordPageFromSitemap.cs" />
     <Compile Include="Apps\Core\Widgets\Slider.cs" />
+    <Compile Include="Apps\Faqs\Areas\Admin\Controllers\FaqController.cs" />
+    <Compile Include="Apps\Faqs\Areas\Admin\Services\GetFaqsViewDatas.cs" />
+    <Compile Include="Apps\Faqs\DbConfiguration\FaqItemOverride.cs" />
+    <Compile Include="Apps\Faqs\Entities\Faq.cs" />
+    <Compile Include="Apps\Faqs\FaqsApp.cs" />
+    <Compile Include="Apps\Faqs\Models\RandomFaqModel.cs" />
+    <Compile Include="Apps\Faqs\Pages\ShowFaqs.cs" />
+    <Compile Include="Apps\Faqs\Services\FaqService.cs" />
+    <Compile Include="Apps\Faqs\Services\IFaqService.cs" />
+    <Compile Include="Apps\Faqs\Services\Widgets\GetRandomFaqModel.cs" />
+    <Compile Include="Apps\Faqs\Widgets\FeaturedFaq.cs" />
+    <Compile Include="Apps\Faqs\Widgets\RandomFaq.cs" />
     <Compile Include="Apps\Galleries\Areas\Admin\Services\GetGalleryAdminViewData.cs" />
     <Compile Include="Areas\Admin\ACL\MediaToolsACL.cs" />
     <Compile Include="Areas\Admin\ACL\NotificationACL.cs" />
@@ -709,6 +721,7 @@
     <Content Include="Apps\Core\Content\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Apps\Core\Content\Bootstrap\js\bootstrap.js" />
     <Content Include="Apps\Core\Content\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\images\header-logo.png" />
     <Content Include="Apps\Core\Content\Images\mrcms-hat.gif" />
     <Content Include="Apps\Core\Content\Images\mrcms-logo.png" />
     <Content Include="Apps\Core\Content\SocialButtons\zocial-regular-webfont.svg" />
@@ -1993,6 +2006,7 @@
     <Content Include="Content\css\sass\site.scss" />
     <Content Include="Content\css\site.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\images\user.png" />
     <Content Include="Content\install\images\install-synchronizing.gif" />
     <Content Include="Content\install\scripts\install.js" />
     <Content Include="Content\install\scripts\jquery.validate.js" />
@@ -2043,7 +2057,18 @@
     <Content Include="Areas\Admin\Content\Scripts\lib\jquery.signalR-2.2.0.js" />
     <Content Include="Areas\Admin\Content\Scripts\lib\jquery.signalR-2.2.0.min.js" />
     <Content Include="gulpfile.js" />
+    <Content Include="jjm.html" />
+    <Content Include="jjm - Copy.html" />
+    <Content Include="jjm-good.html" />
+    <Content Include="jjm-ridge-realty.html" />
     <Content Include="robots.txt" />
+    <Content Include="Themes\ridge-realty\Content\css\site.css" />
+    <Content Include="Themes\ridge-realty\Content\images\hero-house.jpg" />
+    <Content Include="Themes\ridge-realty\Content\images\house-for-sale-sign-png24.png" />
+    <Content Include="Themes\ridge-realty\Content\images\house-for-sale-sign.jpg" />
+    <Content Include="Themes\ridge-realty\Content\images\house-for-sale-sign_png8.png" />
+    <Content Include="Themes\ridge-realty\Content\images\logo-ridge-realty_h50.png" />
+    <Content Include="Themes\ridge-realty\Content\images\logo-ridge-realty_xl.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2059,7 +2084,7 @@
     </Content>
     <Content Include="Apps\Core\Views\Widgets\PlainTextWidget.cshtml" />
     <Content Include="Apps\Core\Areas\Admin\Views\Widget\PlainTextWidget.cshtml" />
-    <Content Include="Apps\Core\Views\Shared\_BaseLayout.cshtml" />
+    <Content Include="Apps\Core\Views\Shared\__BaseLayout.cshtml" />
     <Content Include="Apps\Core\Views\Pages\SearchPage.cshtml" />
     <Content Include="Areas\Admin\Content\Styles\bootstrap\js\bootstrap.min.js.map">
       <DependentUpon>bootstrap.js</DependentUpon>
@@ -2187,10 +2212,15 @@
     <Folder Include="Apps\Galleries\Views\Widgets\" />
     <Folder Include="Apps\Galleries\Widgets\" />
     <Folder Include="Content\lib\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Themes\Default\Apps\Core\Views\Pages\" />
     <Folder Include="Themes\Default\Content\" />
     <Folder Include="Themes\Default\Views\Pages\" />
     <Folder Include="Themes\Default\Views\Widgets\" />
+    <Folder Include="Themes\ridge-realty\Apps\Galleries\" />
+    <Folder Include="Themes\ridge-realty\Views\Pages\" />
+    <Folder Include="Themes\ridge-realty\Views\Shared\" />
+    <Folder Include="Themes\ridge-realty\Views\Widgets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -2218,6 +2248,64 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".bowerrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\sass\partials\_content.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Faq\Add.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Faq\Delete.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Faq\Edit.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Web.config" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Webpage\ShowFaqs.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Widget\FeaturedFaq.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Widget\FeaturedFaqAdd.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Widget\RandomFaq.cshtml" />
+    <Content Include="Apps\Faqs\Areas\Admin\Views\Widget\RandomFaqAdd.cshtml" />
+    <Content Include="Apps\Faqs\Views\Pages\ShowFaqs.cshtml" />
+    <Content Include="Apps\Faqs\Views\Web.config" />
+    <Content Include="Apps\Faqs\Views\Widgets\FeaturedFaq.cshtml" />
+    <Content Include="Apps\Faqs\Views\Widgets\RandomFaq.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\sass\partials\_nav.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\sass\partials\_home_DEA.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Core\Web.config" />
+    <Content Include="Themes\ridge-realty\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\Default\Views\Shared\_BaseLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Core\Views\Shared\_BaseLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Core\Views\Shared\_RightColumn-8-1-3.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\PropertyItem.cshtml" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\ArticleList.cshtml" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\ArticleTiled.cshtml" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\ArticleTiledList.cshtml" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Web.config" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Widgets\ArticleArchive.cshtml" />
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Widgets\LatestXArticles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\PropertyListing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Pages\Article.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Articles\Views\Widgets\ArticleCategories.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\ridge-realty\Apps\Core\Views\Pages\TextPage.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
