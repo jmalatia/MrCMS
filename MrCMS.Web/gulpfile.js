@@ -22,8 +22,9 @@ paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 paths.sass = paths.webroot + "css/sass/**/*.scss";
 paths.sassDest = paths.webroot + "css";
+paths.cssCopyTo = "./themes/ridge-realty/content/css/";
 //paths.autoprefixer = paths.webroot + "css/dist/style-sass.css";
-//paths.autoprefixerDest = paths.webroot + "css/dist/dist";
+//paths.autoprefixerDest = paths.webroot + "css/dist/dist"; 
 
 //sass  
 gulp.task('sass-autoprefixer:compile', function () {
@@ -32,7 +33,8 @@ gulp.task('sass-autoprefixer:compile', function () {
         .pipe(autoprefixer({
             browsers: ['last 5 versions']
         }))
-        .pipe(gulp.dest(paths.sassDest));
+        .pipe(gulp.dest(paths.sassDest))
+        .pipe(gulp.dest(paths.cssCopyTo));
 });
 
 //gulp.task('watch:sass', function () {
