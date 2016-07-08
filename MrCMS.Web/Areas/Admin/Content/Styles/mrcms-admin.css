@@ -165,4 +165,13 @@ input.input-validation-error, select.input-validation-error { border: 1px solid 
 }
 
 
+/*======================
+   JJM ckEditor
+ ======================
+*/
+
+    /*Make Format & Styles DropDown boxes wider */
+        .cke_combopanel {
+            width: 250px!important;
+        }
 
