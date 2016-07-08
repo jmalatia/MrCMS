@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta name="description" />
+    <meta name="keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+
+    <link href="/Apps/Core/Content/Styles/style.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/site.css" rel="stylesheet" type="text/css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><script src="/Apps/Core/Content/Scripts/respond.min.js"></script><![endif]-->
+
+    <style>
+
+        .dropdown-search {
+            width: 250px;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        .navbar-brand {
+            padding: 2px;
+            display: block;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        /* Bootstrap nav override active */
+            .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+                color: #555;
+                background-color: #ededed;
+            }
+
+        /* Bootstrap nav override hover */
+            .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+                color: #222;
+                background-color: transparent;
+                background-color: #d7d7d7;
+            }
+
+@media (min-width: 770px) {
+
+        nav.navbar-h-expanded,
+        nav.navbar-h-expanded.nav-sm {
+            transition: all 1.5s;
+        }
+
+        
+        nav.navbar-h-expanded,
+        .navbar-h-expanded .navbar-brand,
+        .navbar-h-expanded .navbar-nav > li  {
+            transition: all 1.5s;
+            height: 150px;
+            /*padding-top: 30px;*/
+        }
+
+        /* change to all (.navbar-h-expanded .navbar-nav > li) to (.navbar-h-expanded .navbar-nav > li > a) with line-height and remove padding-top to make hover entire top to bottom */
+        /*.navbar-brand,*/
+        .navbar-h-expanded .navbar-nav > li  {
+            transition: all 1.5s;
+            /*line-height: 150px;*/
+            padding-top: 50px;
+        }
+
+        .navbar-h-expanded .navbar-brand img {
+            /*height:80px;*/
+            height: 140px;
+            transition: all 1.5s;
+            padding-top: 5px;
+            margin-top:0;
+        }
+
+
+        nav.navbar-h-expanded.nav-sm,
+        nav.navbar-h-expanded.nav-sm .navbar-brand,
+        nav.nav-sm .navbar-nav > li  {
+            transition: all 1.5s;
+            height: 50px;
+            padding-top: 0;
+        }
+
+        /*nav.navbar-h-expanded.nav-sm .navbar-brand,*/
+        nav.navbar-h-expanded.nav-sm .navbar-nav > li  {
+            line-height: 50px;
+        }
+
+        nav.navbar-h-expanded.nav-sm navbar,
+        nav.navbar-h-expanded.nav-sm .navbar-brand img {
+            height: 50px;
+            /*padding: 5px 5px;*/
+            padding: 1px 0;
+            margin-top:0;
+        }
+
+        .navbar-h-expanded .navbar-brand {
+            padding: 0;
+            padding-left:5px;
+        }
+
+}
+
+
+        @media (max-width: 999px) {
+            .navbar-h-expanded .navbar-brand img {
+                height: 70px;
+                margin-top:35px;
+            }
+        }
+
+        @media (max-width: 769px) {
+            .navbar-h-expanded .navbar-brand img {
+                height: 100%;
+                margin-top:0;
+            }
+
+            .navbar-brand {
+                padding: 1px 1px 1px 5px;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id="template-page-wrapper">
+        <header id="tpl-header">
+            <nav class="navbar navbar-h-expanded navbar-default Xnavbar-inverse navbar-XXmrcms navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div><a class="navbar-brand" href="/">
+                            <img src="/content/images/logo-ridge-realty_xl.png" class="" style="Xheight: 40px; Xleft: 0; Xposition: relative; Xtop: 5px; Xwidth: auto" /></a></div>
+
+                    </div>
+                    <div class="collapse navbar-collapse navbar-left" id="navbar-collapse-main">
+
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="">
+                                <a href="/page-2">Agents</a>
+                            </li>
+                            <li class="">
+                                <a href="/listings">Listings</a>
+                            </li>
+                            <li class="">
+                                <a href="/faqfaq">FAQ</a>
+                            </li>
+                            <li class="">
+                                <a href="/text-page-1">About</a>
+                            </li>
+                            <li class="">
+                                <a href="/contact-us">Contact us</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav" id="nav-links-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-search">
+                                    <form class="navbar-form navbar-left form-inline" role="search" method="GET" action="/search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="term">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                            </span>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/register">Register</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="tpl-content" class="container mrcms-content">
+
+
+
+            <h1>Mr CMS</h1>
+            <p>Welcome to Mr CMS, the only CMS you will need.</p>
+            <p>Turn on inline editing above, then click here. Pretty cool huh? </p>
+
+
+
+        </div>
+
+
+        <footer id="tpl-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <p>&copy;2016 <a href="http://www.backslash-tech.com">\tech</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+
+
+
+    <script src="/Apps/Core/Content/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/Apps/Core/Content/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/Apps/Core/Content/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+
+    <script>
+        $(window).scroll(function () {
+            var scrollh = $(this).scrollTop();
+            if (scrollh <= 300) {
+                $(".navbar-h-expanded").removeClass("nav-sm");
+                //$(".navbar").css({
+                //    'height': '100px',
+                //});
+            } else {
+                $(".navbar-h-expanded").addClass("nav-sm")
+                //$(".navbar").css({
+                //    'height': '50px',
+                //});
+            }
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>
