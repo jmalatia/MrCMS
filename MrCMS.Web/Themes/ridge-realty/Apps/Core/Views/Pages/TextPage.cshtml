@@ -1,0 +1,5 @@
+﻿@using System.Drawing
+@model MrCMS.Web.Apps.Core.Pages.TextPage
+@*@RenderImage(Model.FeatureImage, new Size { Width = 250 },null,null,new { style="float: right; margin: 0 0 1em 1em;" })*@
+@RenderImage(Model.FeatureImage, new Size { }, null, null, new { style = "float: right; margin: 0 0 1em 1em;" })
+@Editable(Model, page => page.BodyContent, true)

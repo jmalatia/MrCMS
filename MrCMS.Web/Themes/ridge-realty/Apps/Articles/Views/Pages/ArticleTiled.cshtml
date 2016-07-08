@@ -1,0 +1,26 @@
+﻿@model MrCMS.Web.Apps.Articles.Pages.Article
+<article id="article-tiled">
+    <div class="row">
+        
+        <div class="col-md-12">
+            <h1 class="margin-top-0">@Editable(Model, p => p.Parent.Name, false)</h1>
+            <h3 class="margin-top-0">@Editable(Model, p => p.Name, false)</h3>
+            @*<a href="/@Model.Parent.UrlSegment" class="btn btn-default">Back</a>
+                @Model.CreatedOn.Day @Model.CreatedOn.ToString("MMMMM") @Model.CreatedOn.Year
+                <br />*@
+            @*<div class="clearfix">
+                <span class="pull-right"><a href="/@Model.Parent.UrlSegment" class="btn btn-default">Back</a></span>
+            </div>*@
+            <hr />
+            @if (!String.IsNullOrEmpty(Model.FeatureImage))
+            {
+                @*<a href="/@Model.LiveUrlSegment" class="margin-top-0">*@
+                    //@RenderImage(Model.FeatureImage, default(System.Drawing.Size), null, null, new { @class = "pull-right img-responsive" })
+                    @*<img src="@Model.FeatureImage" class="img-responsive img-circle pull-right featured-image" style="max-width:300px; margin: 0 0 1em 1em;" />*@
+                    <img src="@Model.FeatureImage" class="featured-image" />
+                @*</a>*@
+            }
+            @Editable(Model, page => page.BodyContent, true)
+        </div>
+    </div>
+</article>

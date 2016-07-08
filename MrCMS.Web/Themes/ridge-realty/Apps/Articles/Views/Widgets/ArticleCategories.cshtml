@@ -1,0 +1,41 @@
+﻿@using System.Activities.Statements
+@using MrCMS.Web.Apps.Articles.Pages
+@model MrCMS.Web.Apps.Articles.Widgets.ArticleCategories
+@{
+    var list = ViewData["ArticleLists"] as ArticleList;
+
+    //jjm
+    var newList = Model.ArticleList.Tags.OrderBy(x => x.Name); 
+    //var newList = list.Tags.OrderBy(x => x.Name).ToList();
+
+}
+
+<div id="widget-article-categories">
+    @{
+        if (Model.ShowNameAsTitle)
+        {
+            <h4 class="header">@Model.Name</h4>
+        }
+    }
+    <ul class="Xnav Xnav-pills Xnav-stacked">
+        @*@foreach (var category in Model.ArticleList.Tags)
+                {
+                <li class="@((!string.IsNullOrEmpty(Model.Category) && Model.Category == category.Name) ? "active" : "")">
+                    <a href="/@Model.ArticleList.LiveUrlSegment?category=@category.Name">@category.Name</a>
+                </li>
+
+            }*@
+
+        <li class="cat @((string.IsNullOrEmpty(Model.Category)) ? "active" : "")"><a href="/@Model.ArticleList.LiveUrlSegment">All</a></li>
+
+        @foreach (var category in newList)
+        {
+            <li class="cat @((!string.IsNullOrEmpty(Model.Category) && Model.Category == category.Name) ? "active" : "")">
+                <a href="/@Model.ArticleList.LiveUrlSegment?category=@category.Name">@category.Name</a>
+            </li>
+        }
+
+            
+
+    </ul>
+</div>

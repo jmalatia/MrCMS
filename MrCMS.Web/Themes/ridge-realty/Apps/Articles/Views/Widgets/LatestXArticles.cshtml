@@ -1,0 +1,26 @@
+﻿@model MrCMS.Web.Apps.Articles.Models.LatestXArticlesViewModel
+@if (Model != null)
+{
+    <div class="widget-latest-x-articles">
+        @if (!String.IsNullOrEmpty(Model.Title))
+        {
+            @*<h4>@Model.Title</h4>*@
+            @*<li class="title">@Model.Title</li>*@
+            @*<li class="title"><h4><a href="../@Model.Title.ToLower()">@Model.Title</a></h4></li>*@
+            <h4 class="title"><a href="../@Model.Title.ToLower()">@Model.Title</a></h4>
+        }
+        <ul>
+
+            @foreach (var article in Model.Articles)
+            {
+                @*<h4><a href="/@article.LiveUrlSegment">@article.Name</a></h4>*@
+                <li><a href="~/@article.LiveUrlSegment">@article.Name</a></li>
+                @*@article.Parent.UrlSegment
+                <br />
+                @article.AbsoluteUrl<br />
+                @article.LiveUrlSegment*@
+            }
+
+        </ul>
+    </div>
+}

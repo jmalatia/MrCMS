@@ -1,0 +1,22 @@
+﻿@model MrCMS.Web.Apps.Articles.Pages.Article
+<article>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="clearfix">
+                <h1 style="display:inline-block; margin: 0 3em 0 0;">@Editable(Model, p => p.Name, false)</h1>
+                <span class="pull-right" style="margin-top: .5em;"><a href="/@Model.Parent.UrlSegment" class="btn btn-default">Back</a></span>
+            </div>
+            <div>
+                <hr />
+                @if (!String.IsNullOrEmpty(Model.FeatureImage))
+                {
+                    @*<a href="/@Model.LiveUrlSegment" class="margin-top-0">*@
+                    @RenderImage(Model.FeatureImage, default(System.Drawing.Size), null, null, new { @class = "pull-right img-responsive", style = "margin: 0 0 1em 1em;" })
+                    @*</a>*@
+                }
+                @Editable(Model, page => page.BodyContent, true)
+            </div>
+        </div>
+    </div>
+</article>
+

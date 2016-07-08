@@ -1,0 +1,154 @@
+﻿@using System.Drawing
+@using MrCMS.Helpers
+@using MrCMS.Paging
+@using MrCMS.Web.Apps.Articles.Models
+@using MrCMS.Web.Apps.Articles.Pages
+@model ArticleList
+@Editable(Model, p => p.BodyContent, true)
+@{
+    var pagedList = ViewData["paged-articles"] as IPagedList<Article>;
+    var searchModel = ViewData["article-search-model"] as ArticleSearchModel;
+}
+@if (pagedList != null && !pagedList.Any() && !string.IsNullOrEmpty(searchModel.Category))
+{
+    <div class="alert alert-info">No posts available in category "@searchModel.Category".</div>
+    <p><a href="/@Model.LiveUrlSegment">Show all</a></p>
+}
+
+<div id="article-tiled-list" class="fouc">
+
+    @if (pagedList != null)
+    {
+        <div class="row">
+            @foreach (var page in pagedList)
+            {
+                if (page.PublishOn != null)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="article-item text-center follow-child-link">
+                            @*<a href="/@page.LiveUrlSegment">*@
+                            <div class="image-wrapper Ximage-cropper">
+                                @if (!String.IsNullOrEmpty(page.FeatureImage))
+                                {
+                                    //@RenderImage(page.FeatureImage, new Size { Height = 250 })
+                                    //@RenderImage(page.FeatureImage, null, null, null, new { @class = "img-responsive img-circle" })
+                                    @*@RenderImage(page.FeatureImage, new Size { Height = 250, Width=250 },null, null, new { mode="crop", @class = "img-responsive img-circle" })*@
+                                    <img alt="@page.Name" src="@page.FeatureImage" class="img-responsive img-circle" />
+                                }
+                                else
+                                {
+                                    @*<i class="fa fa-user"></i>*@
+                                    <img alt="" src="~/Content/images/user.png" class="img-responsive img-circle" />
+                                }
+                            </div>
+
+                            <h4 class="name">@page.Name</h4>
+                            <div class="abstract">@Editable(page, p => p.Abstract)</div>
+                            <div><a href="/@page.LiveUrlSegment" class="btn btn-primary btn-outline">More Info</a></div>
+                            @*</a>*@
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    }
+    @if (Model.AllowPaging)
+    {
+        @Html.PageCurrentPage(pagedList, i => new { Page = i }, PagedListRenderOptions.PageNumbersOnly)
+    }
+
+</div>
+
+@section JavascriptBlockInclude {
+    <style>
+        /*.article-item {
+                cursor: pointer;
+                padding: 1em 0;
+            }
+
+                .article-item:hover {
+                    background-color: #ebebeb;
+                }
+
+                .article-item h3 {
+                    margin: 0;
+                    padding: 0;
+                }*/
+    </style>
+    <style>
+        .image-cropper {
+            width: 200px;
+            height: 200px;
+            /*position: relative;*/
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .image-cropper img {
+            /*display: inline;
+            margin: 0 auto;
+            height: 100%;
+            width: auto;*/
+
+             display: block;
+            /* Stretch
+                  height: 100%;
+                  width: 100%; */
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        /*#page-article-list-tiles .image-wrapper {
+            padding-bottom: 1em;
+        }
+
+        #page-article-list-tiles .article-item img {
+            margin:0 auto;
+        }
+
+         #page-article-list-tiles .article-item .name {
+             text-transform: uppercase;
+         }
+
+        #page-article-list-tiles .article-item .abstract {
+            height: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        #page-article-list-tiles .article-item {
+                cursor: pointer;
+                padding: 2em;
+                border: 1px solid #444;
+                box-shadow: rgba(255,255,255,.4) 1px 1px 15px;
+        }
+
+                 #page-article-list-tiles .article-item:hover {
+                    background-color: #333;
+                    box-shadow: rgba(255,255,255,.7) 1px 1px 15px;
+                }
+
+
+        @@media (max-width: 992px) {
+            #page-article-list-tiles .article-item img {
+                max-width: 50%;
+            }
+             #page-article-list-tiles .article-item {
+                 padding: 1em;
+             }
+        }*/
+    </style>
+
+    @*<script>
+        $(document).ready(function () {
+
+            $(".article-item").click(function () {
+                var href = $(this).find("a").attr("href");
+                if (href) {
+                    window.location = href;
+                }
+            });
+        });
+
+    </script>*@
+}

@@ -1,0 +1,89 @@
+﻿@using System.Drawing
+@using MrCMS.Helpers
+@using MrCMS.Paging
+@using MrCMS.Web.Apps.Articles.Models
+@using MrCMS.Web.Apps.Articles.Pages
+@model ArticleList
+@Editable(Model, p => p.BodyContent, true)
+@{
+    var pagedList = ViewData["paged-articles"] as IPagedList<Article>;
+    var searchModel = ViewData["article-search-model"] as ArticleSearchModel;
+}
+@if (pagedList != null && !pagedList.Any() && !string.IsNullOrEmpty(searchModel.Category))
+{
+    <div class="alert alert-info">No posts available in category "@searchModel.Category".</div>
+    <p><a href="/@Model.LiveUrlSegment">Show all</a></p>
+}
+
+<div id="page-article-list">
+
+    @if (pagedList != null)
+    {
+        foreach (var page in pagedList)
+        {
+            if (page.PublishOn != null)
+            {
+                @*<div class="row">
+                    <div class="col-lg-12">*@
+                <div class="article-item">
+                    @*<h3 class="margin-bottom-0"><a href="/@page.LiveUrlSegment">@page.Name </a></h3>
+                        <span class="small"><strong>@page.PublishOn.Value.Day @page.PublishOn.Value.ToString("MMMMM") @page.PublishOn.Value.Year</strong></span>*@
+
+                    <a href="/@page.LiveUrlSegment">
+                        <h3 class="margin0">@page.Name</h3>
+                    </a>
+                    <span class="small">
+                        <i class="fa fa-calendar"></i> <strong>@page.PublishOn.Value.Day @page.PublishOn.Value.ToString("MMMMM") @page.PublishOn.Value.Year</strong>
+                    </span>
+
+                    @if (!String.IsNullOrEmpty(page.FeatureImage))
+                    {
+                        <div class="left small-margin">
+                            <a href="/@page.LiveUrlSegment" class="margin-top-0">@RenderImage(page.FeatureImage, new Size { Width = 250 })</a>
+                        </div>
+                    }
+                    @Editable(page, p => p.Abstract)
+                </div>
+
+                @*</div>
+                    </div>*@
+            }
+        }
+    }
+    @if (Model.AllowPaging)
+    {
+        @Html.PageCurrentPage(pagedList, i => new { Page = i }, PagedListRenderOptions.PageNumbersOnly)
+    }
+
+</div>
+
+@section JavascriptBlockInclude {
+    <style>
+        /*.article-item {
+            cursor: pointer;
+            padding: 1em 0;
+        }
+
+            .article-item:hover {
+                background-color: #ebebeb;
+            }
+
+            .article-item h3 {
+                margin: 0;
+                padding: 0;
+            }*/
+    </style>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".article-item").click(function () {
+                var href = $(this).find("a").attr("href");
+                if (href) {
+                    window.location = href;
+                }
+            });
+        });
+
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿@using System.Drawing
+@using MrCMS.Helpers
+@using MrCMS.Paging
+@using MrCMS.Web.Apps.Articles.Models
+@using MrCMS.Web.Apps.Articles.Pages
+@model ArticleList
+@Editable(Model, p => p.BodyContent, true)
+@{
+    var pagedList = ViewData["paged-articles"] as IPagedList<Article>;
+    var searchModel = ViewData["article-search-model"] as ArticleSearchModel;
+}
+@if (pagedList != null && !pagedList.Any() && !string.IsNullOrEmpty(searchModel.Category))
+{
+    <div class="alert alert-info">No posts available in category "@searchModel.Category".</div>
+    <p><a href="/@Model.LiveUrlSegment">Show all</a></p>
+}
+
+<div id="page-property-listing">
+
+    @if (pagedList != null)
+    {
+        foreach (var page in pagedList)
+        {
+            if (page.PublishOn != null)
+            {
+                <div class="property">
+                    <div class="row">
+                        <a href="/@page.LiveUrlSegment">
+                            <div class="col-sm-3">
+                                @if (!String.IsNullOrEmpty(page.FeatureImage))
+                                {
+                                    @RenderImage(page.FeatureImage, new Size { Width = 250 },null,null,new { @class = "img-responsive" })
+                                }
+                                else
+                                {
+                                    <div class="icon"><i class="fa fa-picture-o Xfa-5x"></i></div>
+                                }
+                            </div>
+                            <div class="col-sm-9">
+                                <h3 class="header">@page.Name</h3>
+                                <div class="abstract">@Editable(page, p => p.Abstract)</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            }
+        }
+    }
+    @if (Model.AllowPaging)
+    {
+        @Html.PageCurrentPage(pagedList, i => new { Page = i }, PagedListRenderOptions.PageNumbersOnly)
+    }
+
+</div>
+
+@section JavascriptBlockInclude {
+
+    <script>
+        $(document).ready(function () {
+
+            $(".article-item").click(function () {
+                var href = $(this).find("a").attr("href");
+                if (href) {
+                    window.location = href;
+                }
+            });
+        });
+
+    </script>
+}
