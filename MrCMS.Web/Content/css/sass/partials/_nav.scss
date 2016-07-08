@@ -1,0 +1,172 @@
+﻿@import "_base.scss";
+
+nav  {
+    
+        font-family: 'Open Sans', 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 'Helvetica Neue', Arial, Helvetica,  sans-serif;
+        font-weight: 100;
+        font-size: 1.2em;
+
+        .navbar-brand {
+            padding: 2px;
+            display: block;
+        }
+         
+        .navbar-brand img {
+            height: 45px;
+        }
+
+
+
+
+        @media (min-width: 770px) {
+
+            &.navbar-h-expanded,
+            &.navbar-h-expanded.nav-sm {
+                transition: all 1.5s;
+            }
+
+        
+            &.navbar-h-expanded,
+            &.navbar-h-expanded .navbar-brand,
+            &.navbar-h-expanded .navbar-nav > li  {
+                transition: all 1.5s;
+                height: 150px;
+                /*padding-top: 30px;*/
+            }
+
+            /* change to all (.navbar-h-expanded .navbar-nav > li) to (.navbar-h-expanded .navbar-nav > li > a) with line-height and remove padding-top to make hover entire top to bottom */
+            /*.navbar-brand,*/
+            &.navbar-h-expanded .navbar-nav > li  {
+                transition: all 1.5s;
+                /*line-height: 150px;*/
+                padding-top: 50px;
+            }
+
+            &.navbar-h-expanded .navbar-brand img {
+                /*height:80px;*/
+                height: 140px;
+                transition: all 1.5s;
+                padding-top: 5px;
+                margin-top:0;
+            }
+
+
+            &.navbar-h-expanded.nav-sm,
+            &.navbar-h-expanded.nav-sm .navbar-brand,
+            &.navbar-h-expanded.nav-sm .navbar-nav > li  {
+                transition: all 1.5s;
+                height: 50px;
+                padding-top: 0;
+            }
+
+            /*nav.navbar-h-expanded.nav-sm .navbar-brand,*/
+            &.navbar-h-expanded.nav-sm .navbar-nav > li  {
+                line-height: 50px;
+            }
+
+            &.navbar-h-expanded.nav-sm navbar,
+            &.navbar-h-expanded.nav-sm .navbar-brand img {
+                height: 50px;
+                /*padding: 5px 5px;*/
+                padding: 1px 0;
+                margin-top:0;
+            }
+
+            &.navbar-h-expanded .navbar-brand {
+                padding: 0;
+                padding-left:5px;
+            }
+
+        }
+
+        /* 999 , h70*/
+        @media (max-width: 999px) {
+            &.navbar-h-expanded .navbar-brand img {
+                height: 70px;
+                margin-top:35px;
+            }
+
+            &.navbar-h-expanded  {
+                font-size: 1em!important;
+            }
+        }
+
+        //769
+        @media (max-width: 769px) {
+            &.navbar-h-expanded .navbar-brand img {
+                height: 100%;
+                margin-top:0;
+            }
+
+            .navbar-brand {
+                padding: 1px 1px 1px 5px;
+            }
+        }
+
+
+}
+
+//Bootstrap Nav Fixes
+
+    .navbar-default {
+        /*background-color: #ffe7a2 !important;*/
+        /*background-color: #dcedff;*/
+        background-color: #fff8e6;
+        /*border-color: #e7e7e7;*/
+    }
+
+   #tpl-footer {
+        //background-color: #ffe7a2 !important;
+        //background-color: #bebebe !important;
+        //background-color: #fff8e6 !important;
+        /*background-color: #dcedff;*/
+        /*border-color: #e7e7e7;*/
+        border-top: 1px solid #e7e7e7;
+    }
+
+   .navbar-default {
+       background-color: #fff8e6 !important;
+   }
+
+//   #tpl-page-wrapper {
+//       background-color: #fff;
+//         
+//      
+//   }
+//
+//   #tpl-content-wrapper {
+//        /* for sticky header */
+//        padding-top: 150px;
+//
+//        @include breakpoint($tablet) {
+//            padding-top: 50px;
+//        }
+//   }
+
+//   #tpl-content {
+//       margin-top: 2em;
+//   }
+
+//   .navbar {
+//       //margin-bottom: 0;
+//   }
+
+
+
+    /* Bootstrap nav override active */
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+            color: #555;
+            background-color: #ededed;
+            background-color: rgba(255,255,255,.3);
+            background-color: rgba(0,0,0,.03);
+            /*background-color: transparent;
+            text-decoration: underline;*/
+        }
+
+    /* Bootstrap nav override hover */
+        .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+            color: #222;
+            background-color: transparent;
+            background-color: #d7d7d7;
+            background-color: rgba(0,0,0,.1);
+        }

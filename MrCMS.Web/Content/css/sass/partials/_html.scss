@@ -1,16 +1,26 @@
 ﻿@import "_base.scss";
 
 body {
-    font-family: Roboto, 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
-    background-color: black;
-    color: #aaa; /*rgb(170,170,170);*/
-    background: #000; 
+    //font-family: Roboto, 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif; 
+    font-family: $font-family;
+    background-color: $body-background-color;
+    color: $font-color; /*rgb(170,170,170);*/
+    font-size: $font-size;
+    //background: #fff; 
+
+    /* for sticky header */
+        /*margin-top: 150px;
+
+        @include breakpoint($tablet) {
+            margin-top: 50px;
+        }*/
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: Oswald, Arial, sans-serif;
-    font-weight: 700;
-    color: white;
+h1, h2, h3, h4, h5, h6
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font-family-hx;
+    font-weight: $font-weight-hx;
+    color: $font-color-hx;
 }
 
 h1, h2,

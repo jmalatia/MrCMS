@@ -38,3 +38,65 @@
     }
 }
 
+
+
+#page-property-listing {
+    .property {
+        padding: 1em;
+        border-top: 1px solid #efefef;
+
+        &:last-child {
+            border-bottom: 1px solid #efefef;
+        }
+
+        &:hover {
+            background-color: $hover-background-color;
+        }
+    
+        .header {
+            margin:0;
+        }
+
+        .abstract {
+            margin-top: .4em;
+        }
+
+        .icon {
+            text-align: center;
+
+            & i {
+                font-size: 7em;
+            }
+        }
+    }
+}
+
+
+
+#widget-article-categories {
+    
+    .header {
+        padding-bottom: .2em;
+        border-bottom: 1px dotted;
+    }
+    
+    ul  {
+       list-style-type: none;
+       margin: 0;
+       padding:0;
+       
+       & li {
+           display: inline-block;
+           border: 1px solid silver;
+           font-size: .9em;
+           font-weight: 100;
+           border-radius: 5px;
+           padding: .4em;
+           margin: .2em;
+
+           &.active {
+               background-color: #f2f2f2;
+           }
+       } 
+    }
+}

@@ -1,16 +1,38 @@
 ﻿
 
+
+.dropdown-search {
+    width: 250px;
+}
+
 // reposition admin navbar
     .mrcms-admin-nav-bar {
         top: initial !important;
         bottom: 0 !important;
     }
 
-    // fix for mrcms-frontendediting.css repositioning html to allow for fixed admin bar
-        html {
-            margin-top: 0 !important;
+// fix for mrcms-frontendediting.css repositioning html to allow for fixed admin bar
+    html {
+        margin-top: 0 !important;
+    }
+
+    body.mrcms-admin-bar-on {
+        margin-bottom: 30px;
+    }
+
+
+//======================
+// ckEditor
+//======================
+
+    //Need to add to ckEditor.config:   config.bodyClass = 'ckEditorBodyClass';
+        body.ckEditorBodyClass,
+        html.cke_panel_container body {
+	        background-color: white!important;
         }
 
-        body.mrcms-admin-bar-on {
-            margin-bottom: 30px;
+    //Make Format & Styles DropDown boxes wider
+        .cke_combopanel {
+            width: 250px!important;
         }
+

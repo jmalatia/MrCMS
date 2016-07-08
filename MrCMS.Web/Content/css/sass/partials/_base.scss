@@ -1,7 +1,33 @@
 ﻿@import "../modules/_all.scss";
 
-$body-background-color: #000;
-$font-color: #aaa;
+$body-background-color: #fff;
+$font-color: #333;
+$font-size: 14px;
+
+$link-color: #337ab7;
+$hover-color: #23527c;
+$hover-text-decoration: underline;
+$hover-background-color: rgba(0,0,0,.05);
+
+$nav-background-color: #fff8e6;
+$nav-active-color: rgba(0, 0, 0, 0.03);
+$nav-hover-color: #222;
+$nav-font-color: #777;
+
+$footer-background-color: #fff8e6;
+$footer-font-color: #555;
+
+$font-family: 'Open Sans', 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 'Helvetica Neue', Arial, Helvetica,  sans-serif;
+
+$font-family-hx: 'Roboto', Oswald, Arial, sans-serif;
+//$font-family-hx: 'Open Sans', 'Roboto', Oswald, Arial, sans-serif;
+$font-weight-hx: 300;
+$font-color-hx: #1e366c;
+
+
+$alt-background-color: #fff8e6;
+$alt-hover: #000;
+$alt-hover-background-color: rgba(0,0,0,.05); //#ebe6e6;
 
 $mobile: screen max-width 320px;
 $small: screen max-width 480px;
@@ -20,3 +46,11 @@ $susy: (
     //gutters: .25,
     //float: left,
     //box-sizing: border-box
+
+
+// breakpoint usage:
+//        .myClass {
+//             @include breakpoint($tablet) {
+//               font-size: 1em;
+//             }
+//           }

@@ -1,5 +1,7 @@
 ﻿@import "partials/_base.scss";
 @import "partials/_html.scss";
+@import "partials/_nav.scss"; 
+@import "partials/_content.scss"; 
 @import "partials/_footer.scss";
 @import "partials/_home.scss";
 @import "partials/_article.scss";
@@ -9,7 +11,7 @@
 @import "partials/_z-bootstrap-fixes.scss";
 @import "partials/_z-mrcms-fixes.scss";  
 @import "lib/_fade-in.scss";
-//@import "lib/_is-loading.scss";
+//@import "lib/_is-loading.scss"; 
 
 //.store-search { @import "_store-search.scss"; }
 

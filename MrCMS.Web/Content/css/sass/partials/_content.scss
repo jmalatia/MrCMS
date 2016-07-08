@@ -1,0 +1,32 @@
+﻿#tpl-page-wrapper {
+    background-color: #fff;
+}
+
+#tpl-content-wrapper {
+    /* for sticky header */
+    padding-top: 150px;
+
+    @include breakpoint($tablet) {
+        padding-top: 50px;
+    }
+}
+
+#tpl-content {
+    // allow for nav-fixed-top (sticky nav)
+    //min-height: 75vh;
+    min-height: 35vh;
+    //margin-top: 75px;
+    //margin-top: 175px;
+    margin-top: 2em;
+    // allow for normal static header
+    //min-height: 81vh;
+    //margin-top: 0;
+    /*background-color: #000;*/
+    > :first-child,
+    > :first-child > h1,
+    > div > :first-child > h1,
+    > h1 {
+        margin-top: 0;
+        margin-bottom: .8em;
+    }
+}
