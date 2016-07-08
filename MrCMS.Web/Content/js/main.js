@@ -85,6 +85,8 @@ function scrollRevealSetup() {
     //Setup any scrollReveal classes
     if ($("[class*='scrollReveal']").length) {
         
+        //alert('main.js:scrollRevealSetup() started');
+
         var config = {
             reset: false,
             viewFactor: 0.20,
@@ -92,6 +94,9 @@ function scrollRevealSetup() {
             delay: 0,
             opacity: 0,
             duration: 800
+            ,useDelay: 'always'
+            //, useDelay: 'onload'
+           //,reset: true
         };
 
         if (isMobile) {
@@ -114,9 +119,39 @@ function scrollRevealSetup() {
         if ($('.scrollReveal-left').length) { sr.reveal('.scrollReveal-left',   { origin: 'left',  scale: 1, distance: '25%' }); }
         if ($('.scrollReveal-right').length) { sr.reveal('.scrollReveal-right', { origin: 'right', scale: 1, distance: '25%' }); }
 
+        if ($('.scrollReveal-hero').length) { sr.reveal('.scrollReveal-hero', { container: '#page-home-hero', useDelay: 'onload', rotate: { x: 65, y: 65, z: 65 }, delay: 1500, scale: 0.01, distance: '80%', duration: 2000 }); }
+        if ($('.page-home .three-points .icon').length) { sr.reveal('.page-home .three-points .icon', { useDelay: 'always', opacity: 0.7, scale: 0.5, distance: '20px', duration: 1500 }); }
+        if ($('.page-home .quoted-section .quote').length) { sr.reveal('.page-home .quoted-section .quote', { useDelay: 'always', opacity: 1, scale: 1, origin: 'left', distance: '35%', duration: 800 }); }
 
     };
 }
+
+
+
+
+
+/* ================================================== */
+/* js for navbar-h-expanded */
+/* ================================================== */
+    $(window).scroll(function () {
+        var scrollh = $(this).scrollTop();
+        if (scrollh <= 300) {
+            $(".navbar-h-expanded").removeClass("nav-sm");
+            //$(".navbar").css({
+            //    'height': '100px',
+            //});
+        } else {
+            $(".navbar-h-expanded").addClass("nav-sm")
+            //$(".navbar").css({
+            //    'height': '50px',
+            //});
+        }
+    });
+/* ================================================== */
+
+// window.sr = ScrollReveal();
+// sr.reveal('#reveal', { delay:2000, duration: 3000 });
+
 
 
 
