@@ -3,10 +3,14 @@
 
 
 #tpl-footer {
-    background-color: $footer-background-color;
-    color: $footer-font-color;
-    margin-top: 3em;
-    padding: 4em 0 0 0;
+    
+    & > .wrapper {
+        background-color: $footer-background-color;
+        color: $footer-font-color;
+        border-top: 1px solid #e7e7e7;
+        margin-top: 3em;
+        padding: 4em 0 0 0;
+    }
 
 
     a {

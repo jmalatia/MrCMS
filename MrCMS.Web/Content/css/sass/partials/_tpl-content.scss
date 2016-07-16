@@ -1,4 +1,6 @@
-﻿#tpl-page-wrapper {
+﻿@import "_base.scss";
+
+#tpl-page-wrapper {
     background-color: #fff;
 }
 
@@ -14,10 +16,16 @@
 #tpl-content {
     // allow for nav-fixed-top (sticky nav)
     //min-height: 75vh;
-    min-height: 35vh;
     //margin-top: 75px;
     //margin-top: 175px;
-    margin-top: 2em;
+    
+        //min-height: 35vh;
+        margin-top: 2em;
+
+        //try scut instead
+
+
+
     // allow for normal static header
     //min-height: 81vh;
     //margin-top: 0;
@@ -30,3 +38,6 @@
         margin-bottom: .8em;
     }
 }
+
+//Scut Sticky Footer, Fluid Height --- But need to add a footer inner-wrapper to add padding/margin/border to footer and apply those to that wrapper
+    @include scut-sticky-footer-fluid("#tpl-page-wrapper","#tpl-footer");
