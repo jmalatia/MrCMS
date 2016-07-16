@@ -29,11 +29,20 @@ $alt-background-color: #fff8e6;
 $alt-hover: #000;
 $alt-hover-background-color: rgba(0,0,0,.05); //#ebe6e6;
 
-$mobile: screen max-width 320px;
-$small: screen max-width 480px;
-$tablet: screen max-width 768px;
-$narrow: screen max-width 992px;
-$wide: screen max-width 1200px;
+$highlight-color: #b10000;
+
+$mobile-width: 320px;
+$small-width: 480px;
+$tablet-width: 767px;
+$narrow-width: 992px;
+$wide-width: 1200px;
+//$collapse-width: $tablet-width + 1px;
+
+$mobile: screen max-width $mobile-width;
+$small: screen max-width $small-width;
+$tablet: screen max-width $tablet-width;
+$narrow: screen max-width $narrow-width;
+$wide: screen max-width $wide-width;
 
 $susy: (
     container: auto,
