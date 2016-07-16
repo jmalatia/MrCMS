@@ -53,11 +53,7 @@
                         @{ RenderZone("Header Left"); }
                     </div>
                     
-
-
-                    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-main">
-                        @{ RenderZone("Main Navigation", allowFrontEndEditing: false); }
-                        @{ RenderZone("Header Right", allowFrontEndEditing: false); }
+                    <div class="navbar-right">
                         <ul class="nav navbar-nav" id="nav-links-right">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -67,27 +63,31 @@
                                     @{ Html.RenderPartial("SearchForm"); }
                                 </div>
                             </li>
+                            <!--<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                @{ RenderZone("Header Right", allowFrontEndEditing: false); }
+                            </li>-->
                         </ul>
                     </div>
 
-                    @*<div class="navbar-right">
-                        <ul class="nav navbar-nav" id="nav-links-right">
+                    <div class="collapse navbar-collapse navbar-right Xnavbar-left" id="navbar-collapse-main">
+                        @{ RenderZone("Main Navigation", allowFrontEndEditing: false); }
+                        @{ RenderZone("Header Right", allowFrontEndEditing: false); }
+                        @*<ul class="nav navbar-nav" id="nav-links-right">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-search">jjm</span>
+                                    <span class="glyphicon glyphicon-search"></span>
                                 </a>
                                 <div class="dropdown-menu  dropdown-search">
                                     @{ Html.RenderPartial("SearchForm"); }
                                 </div>
                             </li>
-                            <!--<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-user"></span>
-                            </a>
-                            @{ RenderZone("Header Right", allowFrontEndEditing: false); }
-                        </li>-->
-                        </ul>
-                    </div>*@
+                        </ul>*@
+                    </div>
+
+
 
                 </div>
             </nav>
@@ -109,7 +109,9 @@
         </div>
 
         <footer id="tpl-footer">
-            @{ RenderZone("Footer"); }
+            <div class="wrapper">
+                @{ RenderZone("Footer"); }
+            </div>
         </footer>
 
     </div>
