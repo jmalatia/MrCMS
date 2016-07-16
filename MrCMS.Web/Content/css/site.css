@@ -1,3 +1,15 @@
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 body {
   font-family: "Open Sans", "Roboto", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, "Helvetica Neue", Arial, Helvetica, sans-serif;
   background-color: #fff;
@@ -42,17 +54,67 @@ a:hover.no-format,
   text-decoration: none;
   color: white; }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 nav {
-  font-family: 'Open Sans', 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 'Helvetica Neue', Arial, Helvetica,  sans-serif;
+  font-family: 'Open Sans', 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-weight: 100;
-  font-size: 1.2em;
-  /* 999 , h70*/ }
+  font-size: 1.2em; }
   nav .navbar-brand {
     padding: 2px;
     display: block; }
   nav .navbar-brand img {
     height: 45px; }
-  @media (min-width: 770px) {
+  nav #nav-links-right .navbar-form {
+    min-width: 220px;
+    border: 0; }
+  @media screen and (max-width: 767px) {
+    nav #nav-links-right {
+      position: absolute;
+      top: 0;
+      right: 70px; }
+    nav #nav-links-right .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0; }
+    nav #nav-links-right > li {
+      float: left; }
+    nav .navbar-nav {
+      margin: 0; }
+    nav .navbar-nav > li > a {
+      padding-top: 15px;
+      padding-bottom: 15px; }
+    nav #nav-links-right .dropdown-menu {
+      right: 0;
+      left: auto; }
+    nav .open > .dropdown-menu {
+      display: block; }
+    nav .navbar-nav .open .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      font-size: 14px;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ccc;
+      border-top: none; }
+    nav #nav-links-right .dropdown-menu > li > a {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: normal;
+      line-height: 1.428571429;
+      color: #333;
+      white-space: nowrap; } }
+  @media (min-width: 768px) {
     nav {
       /* change to all (.navbar-h-expanded .navbar-nav > li) to (.navbar-h-expanded .navbar-nav > li > a) with line-height and remove padding-top to make hover entire top to bottom */
       /*.navbar-brand,*/
@@ -70,6 +132,7 @@ nav {
         /*line-height: 150px;*/
         padding-top: 50px; }
       nav.navbar-h-expanded .navbar-brand img {
+        /* padding: 0;*/
         /*height:80px;*/
         height: 140px;
         transition: all 1.5s;
@@ -94,27 +157,18 @@ nav {
         padding-left: 5px; } }
   @media (max-width: 999px) {
     nav.navbar-h-expanded .navbar-brand img {
+      /* padding: 2px; */
       height: 70px;
       margin-top: 35px; }
     nav.navbar-h-expanded {
       font-size: 1em !important; } }
-  @media (max-width: 769px) {
+  @media (max-width: 767px) {
     nav.navbar-h-expanded .navbar-brand img {
+      /* padding: 3; */
       height: 100%;
       margin-top: 0; }
     nav .navbar-brand {
       padding: 1px 1px 1px 5px; } }
-
-.navbar-default {
-  /*background-color: #ffe7a2 !important;*/
-  /*background-color: #dcedff;*/
-  background-color: #fff8e6;
-  /*border-color: #e7e7e7;*/ }
-
-#tpl-footer {
-  /*background-color: #dcedff;*/
-  /*border-color: #e7e7e7;*/
-  border-top: 1px solid #e7e7e7; }
 
 .navbar-default {
   background-color: #fff8e6 !important; }
@@ -135,18 +189,23 @@ nav {
   background-color: #d7d7d7;
   background-color: rgba(0, 0, 0, 0.1); }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 #tpl-page-wrapper {
   background-color: #fff; }
 
 #tpl-content-wrapper {
   /* for sticky header */
   padding-top: 150px; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     #tpl-content-wrapper {
       padding-top: 50px; } }
 
 #tpl-content {
-  min-height: 35vh;
   margin-top: 2em;
   /*background-color: #000;*/ }
   #tpl-content > :first-child,
@@ -156,11 +215,28 @@ nav {
     margin-top: 0;
     margin-bottom: .8em; }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#tpl-page-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%; }
+
 #tpl-footer {
-  background-color: #fff8e6;
-  color: #555;
-  margin-top: 3em;
-  padding: 4em 0 0 0;
+  display: table-row;
+  height: 1px; }
+
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
+#tpl-footer {
   /*@media screen and (max-width: 767px) {
         .middle {
             padding: 4em 0 5em 0;
@@ -171,6 +247,12 @@ nav {
             padding-right: 0;
         }
     }*/ }
+  #tpl-footer > .wrapper {
+    background-color: #fff8e6;
+    color: #555;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 3em;
+    padding: 4em 0 0 0; }
   #tpl-footer a {
     color: black; }
   #tpl-footer .footer-menu {
@@ -210,7 +292,7 @@ nav {
         border-left: 0;
         margin-left: 0;
         padding-left: 0; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         #tpl-footer .copyright li {
           border: 0;
           display: block;
@@ -218,7 +300,7 @@ nav {
           padding: 0; } }
   #tpl-footer .middle {
     text-align: center; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       #tpl-footer .middle {
         padding: 4em 0 5em 0; } }
     #tpl-footer .middle img {
@@ -228,7 +310,7 @@ nav {
   #tpl-footer .right {
     float: right;
     padding-right: 2em; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       #tpl-footer .right {
         float: none;
         padding-right: 0;
@@ -360,6 +442,12 @@ ul.contact.social li {
   padding-left: 1.5em;
   padding-right: 1.5em; }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 .page-home #page-home-hero {
   background-image: url("../images/hero-house.jpg");
   height: 70vh;
@@ -554,6 +642,12 @@ a .down-arrow-circle:focus {
     width: 30%;
     margin-left: -15%; } }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 #article-tiled-list .image-wrapper {
   padding-bottom: 1em; }
 
@@ -696,6 +790,12 @@ a .down-arrow-circle:focus {
     .widget-latest-x-articles .title a:hover {
       background-color: rgba(0, 0, 0, 0.05); }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 .testimonials blockquote img {
   border-radius: 50%;
   float: right;
@@ -738,6 +838,12 @@ a .down-arrow-circle:focus {
   bottom: 0;
   line-height: 0.1em; }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 table.cages-price-table td {
   padding: .5em .8em; }
 
@@ -756,6 +862,12 @@ table.cages-price-table td {
   padding: .5em; }
 
 /*#endregion */
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 .page-facility .wrapper {
   padding: 1.5em 1em 1em 1em; }
   @media only screen and (max-width: 992px) {
